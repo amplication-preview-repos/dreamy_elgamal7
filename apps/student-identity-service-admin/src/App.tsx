@@ -5,6 +5,10 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
+import { AcademicIdentityList } from "./academicIdentity/AcademicIdentityList";
+import { AcademicIdentityCreate } from "./academicIdentity/AcademicIdentityCreate";
+import { AcademicIdentityEdit } from "./academicIdentity/AcademicIdentityEdit";
+import { AcademicIdentityShow } from "./academicIdentity/AcademicIdentityShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -30,7 +34,15 @@ const App = (): React.ReactElement => {
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
-      ></Admin>
+      >
+        <Resource
+          name="AcademicIdentity"
+          list={AcademicIdentityList}
+          edit={AcademicIdentityEdit}
+          create={AcademicIdentityCreate}
+          show={AcademicIdentityShow}
+        />
+      </Admin>
     </div>
   );
 };

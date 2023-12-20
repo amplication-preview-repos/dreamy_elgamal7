@@ -6,3 +6,17 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model AcademicIdentity {
+  academicPartnerId        String?
+  createdAt                DateTime @default(now())
+  guildUuid                String?
+  id                       String   @id @default(uuid())
+  internalStudentId        String
+  isDeleted                Boolean?
+  isLocked                 Boolean?
+  isStudent                Boolean?
+  partnerStudentId         String?
+  primaryInternalStudentId String?
+  updatedAt                DateTime @updatedAt
+}
